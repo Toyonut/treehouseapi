@@ -1,0 +1,25 @@
+{
+  "name": "treehouseapi",
+  "version": "1.0.0",
+  "description": "Learning REST APi with treehouse",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toyonut/treehouseapi.git"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "Express",
+    "JS"
+  ],
+  "author": "Paul Milbank",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Toyonut/treehouseapi/issues"
+  },
+  "homepage": "https://github.com/Toyonut/treehouseapi#readme"
+}
