@@ -1,0 +1,16 @@
+{
+    "dbSettings": {
+        "name": "",
+        "url": "",
+        "port": "",
+        "user": "",
+        "password": ""
+    },
+    "encryption":{
+      "hashRounds": 10,
+      "sessionSecret": ""
+    },
+    "appSettings": {
+      "port": 3000
+    }
+}
