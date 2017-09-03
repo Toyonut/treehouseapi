@@ -1,5 +1,5 @@
 {
-    "dbSettings": {
+    "dbConfig": {
         "name": "",
         "url": "",
         "port": "",
@@ -10,7 +10,7 @@
       "hashRounds": 10,
       "sessionSecret": ""
     },
-    "appSettings": {
+    "appConfig": {
       "port": 3000
     }
 }
