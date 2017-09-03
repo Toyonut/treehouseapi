@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/Toyonut/treehouseapi/issues"
   },
-  "homepage": "https://github.com/Toyonut/treehouseapi#readme"
+  "homepage": "https://github.com/Toyonut/treehouseapi#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
