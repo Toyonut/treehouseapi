@@ -10,6 +10,10 @@ router.post('/', (req, res, next) => {
   res.status(200).json({response: 'post request', body: req.body})
 })
 
+router.get('/query', (req, res, next) => {
+  res.status(200).json({response: 'get query', query: req.query})
+})
+
 router.get('/:id', (req, res, next) => {
   res.status(200).json({response: 'get id', id: req.params.id})
 })
