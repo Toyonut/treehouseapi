@@ -64,6 +64,14 @@ router.delete('/:qID/answers/:aID', (req, res, next) => {
 
 // POST to up or downvote
 router.post('/:qID/answers/:aID/:direction', (req, res, next) => {
+  if (req.params.direction === 'up' || req.params.direction === 'down') {
+    next()
+  } else {
+    const err = new Error('only up and down supported')
+    err.status = 404
+    next(err)
+  }
+}, (req, res, next) => {
   res.status(200).json({
     response: 'PUT request to /:qID/answers/:aID',
     questionID: req.params.qID,
