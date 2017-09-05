@@ -25,7 +25,7 @@ router.get('/query', (req, res, next) => {
   })
 })
 
-// GET /questions/:id
+// GET /questions/:qID
 router.get('/:qID', (req, res, next) => {
   res.status(200).json({
     response: 'GET id',
@@ -33,7 +33,7 @@ router.get('/:qID', (req, res, next) => {
   })
 })
 
-// POST an answer on /questions/:id/answers.
+// POST an answer on /questions/:qID/answers.
 router.post('/:qID/answers', (req, res, next) => {
   res.status(200).json({
     response: 'POST request to /answers/qID',
@@ -46,8 +46,29 @@ router.post('/:qID/answers', (req, res, next) => {
 router.put('/:qID/answers/:aID', (req, res, next) => {
   res.status(200).json({
     response: 'PUT request to /:qID/answers/:aID',
-    qID: req.params.qID,
-    aID: req.params.aID,
+    questionID: req.params.qID,
+    answerID: req.params.aID,
+    body: req.body
+  })
+})
+
+// DELETE a specific answer
+router.delete('/:qID/answers/:aID', (req, res, next) => {
+  res.status(200).json({
+    response: 'PUT request to /:qID/answers/:aID',
+    questionID: req.params.qID,
+    answerID: req.params.aID,
+    body: req.body
+  })
+})
+
+// POST to up or downvote
+router.post('/:qID/answers/:aID/:direction', (req, res, next) => {
+  res.status(200).json({
+    response: 'PUT request to /:qID/answers/:aID',
+    questionID: req.params.qID,
+    answerID: req.params.aID,
+    vote: req.params.direction,
     body: req.body
   })
 })
