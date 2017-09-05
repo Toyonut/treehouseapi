@@ -25,7 +25,8 @@
   "homepage": "https://github.com/Toyonut/treehouseapi#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "morgan": "^1.8.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
