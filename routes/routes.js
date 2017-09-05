@@ -29,7 +29,7 @@ router.get('/query', (req, res, next) => {
 router.get('/:qID', (req, res, next) => {
   res.status(200).json({
     response: 'GET id',
-    id: req.params.id
+    id: req.params.qID
   })
 })
 
@@ -55,7 +55,7 @@ router.put('/:qID/answers/:aID', (req, res, next) => {
 // DELETE a specific answer
 router.delete('/:qID/answers/:aID', (req, res, next) => {
   res.status(200).json({
-    response: 'PUT request to /:qID/answers/:aID',
+    response: 'DELETE request to /:qID/answers/:aID',
     questionID: req.params.qID,
     answerID: req.params.aID,
     body: req.body
