@@ -4,6 +4,7 @@
   "description": "Learning REST APi with treehouse",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app",
     "test": "npm test"
   },
   "repository": {
