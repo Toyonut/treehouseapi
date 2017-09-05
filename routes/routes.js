@@ -32,7 +32,7 @@ router.get('/query', (req, res, next) => {
 })
 
 // GET /questions/:id
-router.get('/:id', (req, res, next) => {
+router.get('/:qID', (req, res, next) => {
   res.status(200).json(
     {
       response: 'GET id',
@@ -41,12 +41,24 @@ router.get('/:id', (req, res, next) => {
   )
 })
 
-// POST an answer on /questions/:id/answers
-router.post('/:id/answers', (req, res, next) => {
+// POST an answer on /questions/:id/answers.
+router.post('/:qID/answers', (req, res, next) => {
   res.status(200).json(
     {
-      response: 'POST request to /answers',
-      id: req.params.id,
+      response: 'POST request to /answers/qID',
+      id: req.params.qID,
+      body: req.body
+    }
+  )
+})
+
+// PUT to update answer with specific answer ID.
+router.put('/:qID/answers/:aID', (req, res, next) => {
+  res.status(200).json(
+    {
+      response: 'PUT request to /:qID/answers/:aID',
+      qID: req.params.qID,
+      aID: req.params.aID,
       body: req.body
     }
   )
