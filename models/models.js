@@ -1,6 +1,7 @@
 'use strict'
 
-const { Schema, Model } = require('mongoose')
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const sortAnswers = (a, b) => {
   if (a.votes === b.votes) {
@@ -16,12 +17,12 @@ const AnswerSchema = new Schema({
   votes: {type: Number, default: 0}
 })
 
-AnswerSchema.methods('update', function (updates, callback) {
-  Object.assign(this, updates, {updatedAt: Date.now})
+AnswerSchema.method('update', function (updates, callback) {
+  Object.assign(this, updates, {updatedAt: new Date()})
   this.parent().save(callback)
 })
 
-AnswerSchema.methods('vote', function (vote, callback) {
+AnswerSchema.method('vote', function (vote, callback) {
   if (vote === 'up') {
     this.votes += 1
   } else {
@@ -41,6 +42,6 @@ questionSchema.pre('save', function (next) {
   next()
 })
 
-const Question = new Model('Question', questionSchema)
+const Question = mongoose.model('Question', questionSchema)
 
-module.exports = Question
+module.exports.Question = Question
