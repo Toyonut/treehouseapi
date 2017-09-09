@@ -22,6 +22,16 @@ mongoose.connect(mongoUri, {
 .then(() => { console.log(`DBConnection to ${dbConf.url} successful`) })
 .catch((err) => { logger(err) })
 
+// set up CORS for any domain... Not secure, but this is a test app.
+app.use((req, res, next) => {
+  res.header('Access-Control.Allow-Origin', '*')
+  res.header('Access-Control.Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control.Allow-Methods', 'PUT, POST, DELETE')
+  }
+  next()
+})
+
 // Routes
 app.use('/questions', router)
 
